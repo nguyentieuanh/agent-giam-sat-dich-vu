@@ -30,5 +30,5 @@ def yaml2dict(yaml_path):
     return data_load
 
 
-config_object = yaml2obj("/Users/tieuanhnguyen/PycharmProjects/multiAgentChatbot/app_chatbot_tarot/config/prompt.yml")
-config_key = yaml2obj("/Users/tieuanhnguyen/PycharmProjects/multiAgentChatbot/app_chatbot_tarot/config/key_api.yml")
+config_object = yaml2obj("config/prompt.yml")
+config_key = yaml2obj("config/key_api.yml")
