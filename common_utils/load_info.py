@@ -23,6 +23,8 @@ def load_alarm_group_content(data_loaded, group_id):
         content += line
     return content
 
+
+#TODO: Hàm load thông tin thiết bị
 def load_alarm_device(id_device, data_loaded):
     content = ""
     for index, item in data_loaded.iterrows():
@@ -30,13 +32,8 @@ def load_alarm_device(id_device, data_loaded):
         pass
 
 
-# file_path = "/Users/tieuanhnguyen/PycharmProjects/multiAgentChatbot/app_flow_service_vtnet/alarm_test/Core Mobile_Cảnh báo đơn lẻ_08052025.xlsx"
-if __name__ == "__main__":
-    file_path = "/Users/tieuanhnguyen/PycharmProjects/multiAgentChatbot/app_flow_service_vtnet/alarm_test/alarms_MSHT25.xlsx"
-    data_loaded = load_data_file(file_path)
-    content = ""
-    columns = data_loaded.columns
-    for index, item in data_loaded.iterrows():
-        content_item = ""
-
-    print("OK")
+# Hàm lấy thông tin các nhóm cần đặt tên
+def load_group_id2match(file_path):
+    data_loaded = pd.read_excel(file_path)
+    group_id = data_loaded["alarm_group_id"].unique()
+    return list(group_id)

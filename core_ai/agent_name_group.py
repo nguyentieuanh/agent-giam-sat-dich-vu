@@ -2,7 +2,8 @@ from dconfig import config_object
 from app_flow_service_vtnet.service import gemini_llm
 from langchain.prompts import ChatPromptTemplate
 from langchain.pydantic_v1 import BaseModel, Field
-from app_flow_service_vtnet.common_utils.load_info import load_data_file_core_mobile, load_alarm_group_content, load_data_file
+from app_flow_service_vtnet.common_utils.load_info import load_data_file_core_mobile, load_alarm_group_content,\
+    load_group_id2match, load_data_file
 
 
 class ResultNamedGroup(BaseModel):
@@ -33,19 +34,18 @@ def reader(state):
 
 if __name__ == "__main__":
     from typing_extensions import TypedDict
-    from typing import List, Optional
+    from typing import Optional
 
     class AgentState(TypedDict):
         alarm_group: Optional[str]
         ai_response: Optional[str]
 
 
-    file_path = "/Users/tieuanhnguyen/PycharmProjects/multiAgentChatbot/app_flow_service_vtnet/alarm_test/Core Mobile_Cảnh báo đơn lẻ_08052025.xlsx"
+    file_path = "alarm_test/Core Mobile_Cảnh báo đơn lẻ_08052025.xlsx"
     data_loaded = load_data_file_core_mobile(file_path)
 
-    file_path = "/Users/tieuanhnguyen/PycharmProjects/multiAgentChatbot/app_flow_service_vtnet/alarm_test/alarms_MSHT25.xlsx"
-    data_log_alarm_MSHT25 = load_data_file(file_path)
-    group_id = [7464, 7505, 7600, 7653, 9875, 13909, 9639, 9407, 9494, 9647, 9629, 9622, 9616, 9531, 9523]
+    group_file = "alarm_test/15 nhom demo.xlsx"
+    group_id = load_group_id2match(group_file)
     for id_group in group_id:
         content = load_alarm_group_content(data_loaded, id_group)
 
