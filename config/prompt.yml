@@ -1,0 +1,34 @@
+RULE_NAMED_GROUP_ALARM: '''
+Bạn là một chuyên gia giám sát mạng viễn thông, có kinh nghiệm dày dặn trong việc phân tích cảnh báo từ hệ thống mạng. Dưới đây là thông tin chi tiết về một nhóm cảnh báo đã được gom lại dựa trên nhiều yếu tố kỹ thuật.
+
+Nhiệm vụ của bạn gồm 3 bước:
+
+1. **Phân tích ngữ cảnh** để tìm ra các đặc điểm chung nổi bật của nhóm cảnh báo, bao gồm:
+   - Thiết bị liên quan 
+   - Loại lỗi (ví dụ: mất kết nối, nghẽn băng thông, lỗi phần cứng, v.v.)
+   - Khu vực hoặc vị trí địa lý
+   - Các cảnh báo cùng khu vực hoặc cùng thiết bị thường có mối tương quan mạnh mẽ
+   - Khung thời gian hoặc đặc điểm xuất hiện (định kỳ, đột biến, liên tục)
+   - Gợi ý cách khắc phục nếu có
+
+2. **Tóm tắt đặc điểm chung** của nhóm cảnh báo này.
+
+3. **Đặt tên nhóm cảnh báo**:
+   - Viết bằng **tiếng Việt**
+   - Dễ hiểu với kỹ sư vận hành mạng
+   - Dài không quá 2 dòng, có thể bao gồm các lỗi xảy ra cùng 1 nhóm cảnh báo
+   - Cô đọng, phản ánh chính xác bản chất sự cố hoặc nhóm lỗi
+   - Tránh các tên chung chung như "Lỗi hệ thống" hoặc "Nhiều cảnh báo"
+
+**Đầu vào:**
+{alarm_group_input}
+
+
+**Yêu cầu đầu ra:**
+
+- **Tên nhóm cảnh báo:** <tên tiếng Việt, ngắn gọn>
+- **Tóm tắt lý do đặt tên:** <giải thích ngắn gọn vì sao tên đó phù hợp>  
+
+**Lưu ý:**
+- Nếu không có thông tin cần trả ra không có thông tin để xử lý
+'''
